@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_sale_hide_price_product" inherit_id="website_sale.product">
+        <xpath expr="//a[@id='add_to_cart']" position="after">
+            <a role="button" id="login" class="btn btn-primary btn-lg mt8 js_check_product" t-attf-href="/web/login">Sign in</a>
+        </xpath>
+
+        <xpath expr="//a[@id='add_to_cart']" position="attributes">
+            <attribute name="t-if">website.user_id != user_id</attribute>
+        </xpath>
+
+        <xpath expr="//a[@id='login']" position="attributes">
+            <attribute name="t-if">website.user_id == user_id</attribute>
+        </xpath>
+    </template>
+
+    <template id="website_sale_hide_price_product_item" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-if">website.user_id != user_id</attribute>
+        </xpath>
+    </template>
+
+    <template id="website_sale_hide_price_product_price" inherit_id="website_sale.product_price">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-if">website.user_id != user_id</attribute>
+        </xpath>
+    </template>
+</odoo>
