@@ -9,7 +9,7 @@
     "summary": """Simplify checkout process by excluding shipping and/or payment information""",
     "category": "eCommerce",
     "images": ["images/1.png"],
-    "version": "13.0.1.0.6",
+    "version": "12.0.1.0.7",
     "author": "IT-Projects LLC",
     "support": "apps@itpp.dev",
     "website": "https://it-projects.info",
@@ -19,6 +19,6 @@
     "depends": ["website_sale"],
     "external_dependencies": {"python": [], "bin": []},
     "data": ["templates.xml", "views.xml", "data/data.xml"],
-    "installable": False,
+    "installable": True,
     "auto_install": False,
 }
